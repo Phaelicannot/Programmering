@@ -1,15 +1,18 @@
 ﻿Console.WriteLine("Välkommen. Vill du spela?");
+janej:
 string janej = Console.ReadLine();
 string lowerjanej = janej.ToLower();
 
-if (janej == "ja")
+if (lowerjanej == "ja")
 {
-    Console.WriteLine($"Ok. Du vaknar upp i ett tomt rum med två dörrar; en röd och en blå. Det verkar inte finnas någon annan utväg. Vilken dörr vill du öppna? Skriv 'röd' eller 'blå'.");
+    Console.WriteLine("Ok. Du vaknar upp i ett tomt rum med två dörrar; en röd och en blå. Det verkar inte finnas någon annan utväg. Vilken dörr vill du öppna? Skriv 'röd' eller 'blå'.");
+    dörr:
     string dörr = Console.ReadLine();
     string lowerdörr = dörr.ToLower();
     if (lowerdörr == "röd")
     {
         Console.WriteLine("Du öppnar den röda dörren. Bakom den finns ännu ett tomt rum, och du går in. När du är inne i rummet ser du att det finns tre dörrar till; en gul, en grön, och en lila. Vilken dörr vill du öppna? Skriv 'gul', 'grön', eller 'lila'.");
+        dörr2:
         string dörr2 = Console.ReadLine();
         string lowerdörr2 = dörr2.ToLower();
         if (lowerdörr2 == "gul")
@@ -29,8 +32,8 @@ if (janej == "ja")
         }
         else 
         {
-            Console.WriteLine("Din inkapabilitet till att stava rätt lämnar dig funderande, och du slutar upp med att aldrig öppna någon av dörrarna. Du ruttnar långsamt bort i rummet medan du sitter och funderar på dina misstag.");
-            Console.ReadLine();
+            Console.WriteLine("Din inkapabilitet till att stava rätt lämnar dig funderande, och du slutar upp med att aldrig öppna någon av dörrarna. Du ruttnar långsamt bort i rummet medan du sitter och funderar på dina misstag. Eller gör du? Du öppnar ögonen och inser att du har dagdrömt. Du står fortfarande framför de tre dörrarna, den gula, den gröna, och den lila. Vilken dörr väljer du? Skriv 'gul', 'grön', eller 'lila'.");
+            goto dörr2;
         }
     }
     else if (lowerdörr == "blå")
@@ -62,17 +65,19 @@ if (janej == "ja")
     }
     else
     {
-        Console.WriteLine("Din inkapabilitet till att stava ett tre-bokstavigt långt ord lämnar dig funderande, och du slutar upp med att aldrig öppna någon av dörrarna. Du ruttnar långsamt bort i rummet medan du sitter och funderar på dina misstag.");
-        Console.ReadLine();
+        Console.WriteLine("Din inkapabilitet till att stava ett tre-bokstavigt långt ord lämnar dig funderande, och du slutar upp med att aldrig öppna någon av dörrarna. Du ruttnar långsamt bort i rummet medan du sitter och funderar på dina misstag. Men gör du? Du öppnar ögonen och inser att du har dagdrömt och fortfarande är vid liv. Du står fortfarande framför de där två dörrarna och rynkar på ögonbrynen. Vilken dörr väljer du, den röda eller den blåa? Skriv 'röd' eller 'blå'.");
+        goto dörr;
     }
 }
-else if (janej == "nej")
+else if (lowerjanej == "nej")
 {
     Console.WriteLine("Jaha ok, hejdå då din odugliga unge");
     Console.ReadLine();
 }
 else
 {
-    Console.WriteLine("Lär dig svara på en fråga");
-    Console.ReadLine();
+    Console.WriteLine("Lär dig svara på en fråga, nu testar vi igen. Vill du spela?");
+    goto janej;
+    
 }
+
